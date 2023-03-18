@@ -1,49 +1,33 @@
+import dotenv from 'dotenv'
 import chalk from 'chalk';
 import figlet from 'figlet';
 import gradient from 'gradient-string';
 import inquirer, { Answers } from 'inquirer';
-import nanospinner from 'nanospinner';
+import { oraPromise } from 'ora'
 import { Subject, toArray } from 'rxjs';
 import fs from 'fs'
-import path from 'path'
+import FileObj, { funcs as fileService} from './fileService'
+import { funcs as gptService} from './chatGPTService'
 
-const getAllFiles = function(dirPath: string, arrayOfFiles: string[]) {
-  const files = fs.readdirSync(dirPath)
-  const allFiles = [...arrayOfFiles]
+dotenv.config()
 
-  files.forEach(function(file) {
-    if (fs.statSync(dirPath + "/" + file).isDirectory()) {
-      allFiles.splice(-1, 0, ...(getAllFiles(dirPath + "/" + file, arrayOfFiles)))
-    } else {
-      allFiles.push(`${dirPath}/${file}`)
-    }
-  })
+const translateFiles = async (arrayOfFiles: string[], localeName: string) => {
+  for (const filePath of arrayOfFiles) {
+    const fileObj = new FileObj(filePath)
+    fileService.createNestedFolder(fileObj)
+    const content = fileObj.getContent()
 
-  return allFiles
-}
-
-const translateFiles = function(arrayOfFiles: string[], localeName: string) {
-  arrayOfFiles.forEach((filePath) => {
-    const folder =  filePath.substring(0,filePath.lastIndexOf("/")+1);
-    const filename = filePath.replace(/^.*[\\\/]/, '')
-
-    // allFiles.push(path.join(__dirname, dirPath, "/", file))
-    console.log("folder: ", folder)
-    console.log("filename: ", filename)
-    const dirname = path.dirname(path.join(__dirname, folder));
-    if (!fs.existsSync(dirname)) {
-      console.log('----- create foledr: ', dirname)
-      fs.mkdirSync(dirname, { recursive: true });
-    }
-    const content = fs.readFileSync(filePath)
-
-    console.log(
-      `translate the following markdown to ${localeName} and output unrendered markdown
+    const prompt = `translate the following markdown to ${localeName} and output unrendered markdown
 
 ${content}
       `
-    )
-  })
+    console.log(prompt)
+    const text = await oraPromise(gptService.sendMessage('Write a poem about cats.'), {
+      text: `Translating ${filePath}`,
+      successText: `Finish translating ${filePath}`
+    })
+    console.log(text)
+  }
 }
 
 const rawdata = fs.readFileSync('locale.json');
@@ -57,18 +41,13 @@ const prompts = new Subject<Answers>();
 inquirer
   .prompt(prompts)
   .ui.process.pipe(toArray())
-  .subscribe((answers) => {
+  .subscribe(async (answers) => {
     const [fileInfo, localeInfo] = answers
-    const allFiles = getAllFiles(fileInfo.answer, [])
+    const allFiles = fileService.getAllFiles(fileInfo.answer, [])
+    
+    // translateFiles(allFiles, localeInfo.answer)
 
-    const lastFile = allFiles[0]
-    translateFiles([lastFile], localeInfo.answer)
-    // translateFiles(allFiles)
-
-    const spinner = nanospinner.createSpinner('Rendering').start();
-    setTimeout(() => {
-        spinner.success({ text: chalk.blue('Done') });
-    }, 100)
+    await translateFiles(['/docs/demo.md'], localeInfo.answer)
   });
 
 prompts.next({
