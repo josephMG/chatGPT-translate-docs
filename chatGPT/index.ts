@@ -1,5 +1,4 @@
 import dotenv from 'dotenv'
-import chalk from 'chalk';
 import figlet from 'figlet';
 import gradient from 'gradient-string';
 import inquirer, { Answers } from 'inquirer';
@@ -11,9 +10,9 @@ import { funcs as gptService} from './chatGPTService'
 
 dotenv.config()
 
-const translateFiles = async (arrayOfFiles: string[], localeName: string) => {
+const translateFiles = async (arrayOfFiles: string[], sourceFolder: string, localeName: string) => {
   for (const filePath of arrayOfFiles) {
-    const fileObj = new FileObj(filePath)
+    const fileObj = new FileObj(filePath, sourceFolder, localeName)
     fileService.createNestedFolder(fileObj)
     const content = fileObj.getContent()
 
@@ -22,11 +21,17 @@ const translateFiles = async (arrayOfFiles: string[], localeName: string) => {
 ${content}
       `
     console.log(prompt)
+    const text = await oraPromise(gptService.sendMessage(prompt), {
+      text: `Translating ${filePath}`,
+      successText: `Finish translating ${filePath}`
+    })
+    /*
     const text = await oraPromise(gptService.sendMessage('Write a poem about cats.'), {
       text: `Translating ${filePath}`,
       successText: `Finish translating ${filePath}`
     })
-    console.log(text)
+     */
+    fileService.writeToFile(fileObj, text)
   }
 }
 
@@ -45,9 +50,10 @@ inquirer
     const [fileInfo, localeInfo] = answers
     const allFiles = fileService.getAllFiles(fileInfo.answer, [])
     
-    // translateFiles(allFiles, localeInfo.answer)
+    // await translateFiles(allFiles, fileInfo.answer, localeInfo.answer)
 
-    await translateFiles(['/docs/demo.md'], localeInfo.answer)
+    // await translateFiles([allFiles[0]], fileInfo.answer, localeInfo.answer)
+    await translateFiles(['/docs/demo.md'], fileInfo.answer, localeInfo.answer)
   });
 
 prompts.next({
@@ -61,7 +67,8 @@ prompts.next({
   type: 'rawlist',
   name: 'Locale',
   message: 'What\'s the language you want?',
-  choices: locales.map(locale => ({ name: `${locale['Display Name']} (${locale['Language Culture Name']})`, value: locale['Language Culture Name']}))
+  choices: locales.map(locale => ({ name: `${locale['Display Name']} (${locale['Language Culture Name']})`, value: locale['Language Culture Name']})),
+  default: 29
 });
 
 prompts.complete();

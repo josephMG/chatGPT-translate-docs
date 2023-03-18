@@ -22,23 +22,31 @@ const getAllFiles = function(dirPath: string, arrayOfFiles: string[]) {
 }
 
 const createNestedFolder = function(fileObj: FileObject) {
-    const folder =  fileObj.getFolder()
-    const filename = fileObj.getFileName()
-
+    const folder =  fileObj.getDestinationFolder()
     // allFiles.push(path.join(__dirname, dirPath, "/", file))
-    console.log("folder: ", folder)
-    console.log("filename: ", filename)
-    const dirname = path.dirname(path.join(__dirname, folder));
-    if (!fs.existsSync(dirname)) {
-      console.log('----- create foledr: ', dirname)
-      fs.mkdirSync(dirname, { recursive: true });
+    const dirName = path.join(__dirname, folder)
+    if (!fs.existsSync(dirName)) {
+      console.log('----- create foledr: ', dirName)
+      fs.mkdirSync(dirName, { recursive: true });
     }
+}
+
+const writeToFile = (fileObj: FileObject, text: string) => {
+  try {
+    fs.writeFileSync(path.join(__dirname, fileObj.getDestinationFolder(), fileObj.getFileName()), text)
+  } catch (err) {
+    console.error(err);
+  }
 }
 
 class FileObject {
     filePath: string
-    constructor(filePath: string) {
+    sourceFolder: string
+    destFolder: string
+    constructor(filePath: string, sourceFolder: string, destFolder: string) {
       this.filePath = filePath
+      this.sourceFolder = sourceFolder
+      this.destFolder = destFolder
     }
     getFolder() {
       return this.filePath.substring(0, this.filePath.lastIndexOf("/")+1);
@@ -46,8 +54,13 @@ class FileObject {
     getFileName() {
       return this.filePath.replace(/^.*[\\\/]/, '')
     }
+    getDestinationFolder() {
+      const folder = this.getFolder()
+      const regExp = new RegExp(`^${this.sourceFolder}`)
+      return folder.replace(regExp, `${this.destFolder}`)
+    }
     getContent() {
-      return fs.readFileSync(this.filePath)
+      return fs.readFileSync(this.filePath, {encoding: 'utf8'})
     }
     // ERROR: An implementation cannot be declared in ambient contexts.
 }
@@ -55,7 +68,8 @@ class FileObject {
 
 const funcs = {
   getAllFiles,
-  createNestedFolder
+  createNestedFolder,
+  writeToFile
 }
 
 export { funcs }
