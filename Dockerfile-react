@@ -1,0 +1,11 @@
+FROM node:19-alpine3.16
+RUN apk add --no-cache git
+# RUN yarn global add firebase-tools npm-check-updates
+
+
+# Install app dependencies
+#RUN mkdir -p /app/node_modules
+WORKDIR /app
+COPY ./reactjs.org/beta /app
+
+RUN yarn install

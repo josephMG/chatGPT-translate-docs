@@ -1,0 +1,11 @@
+FROM node:19-alpine3.16
+RUN apk add --no-cache git
+RUN npm install -g typescript ts-node
+
+# Install app dependencies
+# RUN mkdir -p /app/node_modules
+WORKDIR /app
+COPY ./chatGPT /app
+COPY ./reactjs.org/beta/src/content /docs
+
+RUN npm install
