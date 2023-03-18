@@ -1,0 +1,818 @@
+[
+  {
+    "Language Culture Name": "af-ZA",
+    "Display Name": "Afrikaans - South Africa",
+    "Culture Code": "0x0436",
+    "ISO 639x Value": "AFK"
+  },
+  {
+    "Language Culture Name": "sq-AL",
+    "Display Name": "Albanian - Albania",
+    "Culture Code": "0x041C",
+    "ISO 639x Value": "SQI"
+  },
+  {
+    "Language Culture Name": "ar-DZ",
+    "Display Name": "Arabic - Algeria",
+    "Culture Code": "0x1401",
+    "ISO 639x Value": "ARG"
+  },
+  {
+    "Language Culture Name": "ar-BH",
+    "Display Name": "Arabic - Bahrain",
+    "Culture Code": "0x3C01",
+    "ISO 639x Value": "ARH"
+  },
+  {
+    "Language Culture Name": "ar-EG",
+    "Display Name": "Arabic - Egypt",
+    "Culture Code": "0x0C01",
+    "ISO 639x Value": "ARE"
+  },
+  {
+    "Language Culture Name": "ar-IQ",
+    "Display Name": "Arabic - Iraq",
+    "Culture Code": "0x0801",
+    "ISO 639x Value": "ARI"
+  },
+  {
+    "Language Culture Name": "ar-JO",
+    "Display Name": "Arabic - Jordan",
+    "Culture Code": "0x2C01",
+    "ISO 639x Value": "ARJ"
+  },
+  {
+    "Language Culture Name": "ar-KW",
+    "Display Name": "Arabic - Kuwait",
+    "Culture Code": "0x3401",
+    "ISO 639x Value": "ARK"
+  },
+  {
+    "Language Culture Name": "ar-LB",
+    "Display Name": "Arabic - Lebanon",
+    "Culture Code": "0x3001",
+    "ISO 639x Value": "ARB"
+  },
+  {
+    "Language Culture Name": "ar-LY",
+    "Display Name": "Arabic - Libya",
+    "Culture Code": "0x1001",
+    "ISO 639x Value": "ARL"
+  },
+  {
+    "Language Culture Name": "ar-MA",
+    "Display Name": "Arabic - Morocco",
+    "Culture Code": "0x1801",
+    "ISO 639x Value": "ARM"
+  },
+  {
+    "Language Culture Name": "ar-OM",
+    "Display Name": "Arabic - Oman",
+    "Culture Code": "0x2001",
+    "ISO 639x Value": "ARO"
+  },
+  {
+    "Language Culture Name": "ar-QA",
+    "Display Name": "Arabic - Qatar",
+    "Culture Code": "0x4001",
+    "ISO 639x Value": "ARQ"
+  },
+  {
+    "Language Culture Name": "ar-SA",
+    "Display Name": "Arabic - Saudi Arabia",
+    "Culture Code": "0x0401",
+    "ISO 639x Value": "ARA"
+  },
+  {
+    "Language Culture Name": "ar-SY",
+    "Display Name": "Arabic - Syria",
+    "Culture Code": "0x2801",
+    "ISO 639x Value": "ARS"
+  },
+  {
+    "Language Culture Name": "ar-TN",
+    "Display Name": "Arabic - Tunisia",
+    "Culture Code": "0x1C01",
+    "ISO 639x Value": "ART"
+  },
+  {
+    "Language Culture Name": "ar-AE",
+    "Display Name": "Arabic - United Arab Emirates",
+    "Culture Code": "0x3801",
+    "ISO 639x Value": "ARU"
+  },
+  {
+    "Language Culture Name": "ar-YE",
+    "Display Name": "Arabic - Yemen",
+    "Culture Code": "0x2401",
+    "ISO 639x Value": "ARY"
+  },
+  {
+    "Language Culture Name": "hy-AM",
+    "Display Name": "Armenian - Armenia",
+    "Culture Code": "0x042B",
+    "ISO 639x Value": ""
+  },
+  {
+    "Language Culture Name": "Cy-az-AZ",
+    "Display Name": "Azeri (Cyrillic) - Azerbaijan",
+    "Culture Code": "0x082C",
+    "ISO 639x Value": ""
+  },
+  {
+    "Language Culture Name": "Lt-az-AZ",
+    "Display Name": "Azeri (Latin) - Azerbaijan",
+    "Culture Code": "0x042C",
+    "ISO 639x Value": ""
+  },
+  {
+    "Language Culture Name": "eu-ES",
+    "Display Name": "Basque - Basque",
+    "Culture Code": "0x042D",
+    "ISO 639x Value": "EUQ"
+  },
+  {
+    "Language Culture Name": "be-BY",
+    "Display Name": "Belarusian - Belarus",
+    "Culture Code": "0x0423",
+    "ISO 639x Value": "BEL"
+  },
+  {
+    "Language Culture Name": "bg-BG",
+    "Display Name": "Bulgarian - Bulgaria",
+    "Culture Code": "0x0402",
+    "ISO 639x Value": "BGR"
+  },
+  {
+    "Language Culture Name": "ca-ES",
+    "Display Name": "Catalan - Catalan",
+    "Culture Code": "0x0403",
+    "ISO 639x Value": "CAT"
+  },
+  {
+    "Language Culture Name": "zh-CN",
+    "Display Name": "Chinese - China",
+    "Culture Code": "0x0804",
+    "ISO 639x Value": "CHS"
+  },
+  {
+    "Language Culture Name": "zh-HK",
+    "Display Name": "Chinese - Hong Kong SAR",
+    "Culture Code": "0x0C04",
+    "ISO 639x Value": "ZHH"
+  },
+  {
+    "Language Culture Name": "zh-MO",
+    "Display Name": "Chinese - Macau SAR",
+    "Culture Code": "0x1404",
+    "ISO 639x Value": ""
+  },
+  {
+    "Language Culture Name": "zh-SG",
+    "Display Name": "Chinese - Singapore",
+    "Culture Code": "0x1004",
+    "ISO 639x Value": "ZHI"
+  },
+  {
+    "Language Culture Name": "zh-TW",
+    "Display Name": "Chinese - Taiwan",
+    "Culture Code": "0x0404",
+    "ISO 639x Value": "CHT"
+  },
+  {
+    "Language Culture Name": "zh-CHS",
+    "Display Name": "Chinese (Simplified)",
+    "Culture Code": "0x0004",
+    "ISO 639x Value": ""
+  },
+  {
+    "Language Culture Name": "zh-CHT",
+    "Display Name": "Chinese (Traditional)",
+    "Culture Code": "0x7C04",
+    "ISO 639x Value": ""
+  },
+  {
+    "Language Culture Name": "hr-HR",
+    "Display Name": "Croatian - Croatia",
+    "Culture Code": "0x041A",
+    "ISO 639x Value": "HRV"
+  },
+  {
+    "Language Culture Name": "cs-CZ",
+    "Display Name": "Czech - Czech Republic",
+    "Culture Code": "0x0405",
+    "ISO 639x Value": "CSY"
+  },
+  {
+    "Language Culture Name": "da-DK",
+    "Display Name": "Danish - Denmark",
+    "Culture Code": "0x0406",
+    "ISO 639x Value": "DAN"
+  },
+  {
+    "Language Culture Name": "div-MV",
+    "Display Name": "Dhivehi - Maldives",
+    "Culture Code": "0x0465",
+    "ISO 639x Value": ""
+  },
+  {
+    "Language Culture Name": "nl-BE",
+    "Display Name": "Dutch - Belgium",
+    "Culture Code": "0x0813",
+    "ISO 639x Value": "NLB"
+  },
+  {
+    "Language Culture Name": "nl-NL",
+    "Display Name": "Dutch - The Netherlands",
+    "Culture Code": "0x0413",
+    "ISO 639x Value": ""
+  },
+  {
+    "Language Culture Name": "en-AU",
+    "Display Name": "English - Australia",
+    "Culture Code": "0x0C09",
+    "ISO 639x Value": "ENA"
+  },
+  {
+    "Language Culture Name": "en-BZ",
+    "Display Name": "English - Belize",
+    "Culture Code": "0x2809",
+    "ISO 639x Value": "ENL"
+  },
+  {
+    "Language Culture Name": "en-CA",
+    "Display Name": "English - Canada",
+    "Culture Code": "0x1009",
+    "ISO 639x Value": "ENC"
+  },
+  {
+    "Language Culture Name": "en-CB",
+    "Display Name": "English - Caribbean",
+    "Culture Code": "0x2409",
+    "ISO 639x Value": ""
+  },
+  {
+    "Language Culture Name": "en-IE",
+    "Display Name": "English - Ireland",
+    "Culture Code": "0x1809",
+    "ISO 639x Value": "ENI"
+  },
+  {
+    "Language Culture Name": "en-JM",
+    "Display Name": "English - Jamaica",
+    "Culture Code": "0x2009",
+    "ISO 639x Value": "ENJ"
+  },
+  {
+    "Language Culture Name": "en-NZ",
+    "Display Name": "English - New Zealand",
+    "Culture Code": "0x1409",
+    "ISO 639x Value": "ENZ"
+  },
+  {
+    "Language Culture Name": "en-PH",
+    "Display Name": "English - Philippines",
+    "Culture Code": "0x3409",
+    "ISO 639x Value": ""
+  },
+  {
+    "Language Culture Name": "en-ZA",
+    "Display Name": "English - South Africa",
+    "Culture Code": "0x1C09",
+    "ISO 639x Value": "ENS"
+  },
+  {
+    "Language Culture Name": "en-TT",
+    "Display Name": "English - Trinidad and Tobago",
+    "Culture Code": "0x2C09",
+    "ISO 639x Value": "ENT"
+  },
+  {
+    "Language Culture Name": "en-GB",
+    "Display Name": "English - United Kingdom",
+    "Culture Code": "0x0809",
+    "ISO 639x Value": "ENG"
+  },
+  {
+    "Language Culture Name": "en-US",
+    "Display Name": "English - United States",
+    "Culture Code": "0x0409",
+    "ISO 639x Value": "ENU"
+  },
+  {
+    "Language Culture Name": "en-ZW",
+    "Display Name": "English - Zimbabwe",
+    "Culture Code": "0x3009",
+    "ISO 639x Value": ""
+  },
+  {
+    "Language Culture Name": "et-EE",
+    "Display Name": "Estonian - Estonia",
+    "Culture Code": "0x0425",
+    "ISO 639x Value": "ETI"
+  },
+  {
+    "Language Culture Name": "fo-FO",
+    "Display Name": "Faroese - Faroe Islands",
+    "Culture Code": "0x0438",
+    "ISO 639x Value": "FOS"
+  },
+  {
+    "Language Culture Name": "fa-IR",
+    "Display Name": "Farsi - Iran",
+    "Culture Code": "0x0429",
+    "ISO 639x Value": "FAR"
+  },
+  {
+    "Language Culture Name": "fi-FI",
+    "Display Name": "Finnish - Finland",
+    "Culture Code": "0x040B",
+    "ISO 639x Value": "FIN"
+  },
+  {
+    "Language Culture Name": "fr-BE",
+    "Display Name": "French - Belgium",
+    "Culture Code": "0x080C",
+    "ISO 639x Value": "FRB"
+  },
+  {
+    "Language Culture Name": "fr-CA",
+    "Display Name": "French - Canada",
+    "Culture Code": "0x0C0C",
+    "ISO 639x Value": "FRC"
+  },
+  {
+    "Language Culture Name": "fr-FR",
+    "Display Name": "French - France",
+    "Culture Code": "0x040C",
+    "ISO 639x Value": ""
+  },
+  {
+    "Language Culture Name": "fr-LU",
+    "Display Name": "French - Luxembourg",
+    "Culture Code": "0x140C",
+    "ISO 639x Value": "FRL"
+  },
+  {
+    "Language Culture Name": "fr-MC",
+    "Display Name": "French - Monaco",
+    "Culture Code": "0x180C",
+    "ISO 639x Value": ""
+  },
+  {
+    "Language Culture Name": "fr-CH",
+    "Display Name": "French - Switzerland",
+    "Culture Code": "0x100C",
+    "ISO 639x Value": "FRS"
+  },
+  {
+    "Language Culture Name": "gl-ES",
+    "Display Name": "Galician - Galician",
+    "Culture Code": "0x0456",
+    "ISO 639x Value": ""
+  },
+  {
+    "Language Culture Name": "ka-GE",
+    "Display Name": "Georgian - Georgia",
+    "Culture Code": "0x0437",
+    "ISO 639x Value": ""
+  },
+  {
+    "Language Culture Name": "de-AT",
+    "Display Name": "German - Austria",
+    "Culture Code": "0x0C07",
+    "ISO 639x Value": "DEA"
+  },
+  {
+    "Language Culture Name": "de-DE",
+    "Display Name": "German - Germany",
+    "Culture Code": "0x0407",
+    "ISO 639x Value": ""
+  },
+  {
+    "Language Culture Name": "de-LI",
+    "Display Name": "German - Liechtenstein",
+    "Culture Code": "0x1407",
+    "ISO 639x Value": "DEC"
+  },
+  {
+    "Language Culture Name": "de-LU",
+    "Display Name": "German - Luxembourg",
+    "Culture Code": "0x1007",
+    "ISO 639x Value": "DEL"
+  },
+  {
+    "Language Culture Name": "de-CH",
+    "Display Name": "German - Switzerland",
+    "Culture Code": "0x0807",
+    "ISO 639x Value": "DES"
+  },
+  {
+    "Language Culture Name": "el-GR",
+    "Display Name": "Greek - Greece",
+    "Culture Code": "0x0408",
+    "ISO 639x Value": "ELL"
+  },
+  {
+    "Language Culture Name": "gu-IN",
+    "Display Name": "Gujarati - India",
+    "Culture Code": "0x0447",
+    "ISO 639x Value": ""
+  },
+  {
+    "Language Culture Name": "he-IL",
+    "Display Name": "Hebrew - Israel",
+    "Culture Code": "0x040D",
+    "ISO 639x Value": "HEB"
+  },
+  {
+    "Language Culture Name": "hi-IN",
+    "Display Name": "Hindi - India",
+    "Culture Code": "0x0439",
+    "ISO 639x Value": "HIN"
+  },
+  {
+    "Language Culture Name": "hu-HU",
+    "Display Name": "Hungarian - Hungary",
+    "Culture Code": "0x040E",
+    "ISO 639x Value": "HUN"
+  },
+  {
+    "Language Culture Name": "is-IS",
+    "Display Name": "Icelandic - Iceland",
+    "Culture Code": "0x040F",
+    "ISO 639x Value": "ISL"
+  },
+  {
+    "Language Culture Name": "id-ID",
+    "Display Name": "Indonesian - Indonesia",
+    "Culture Code": "0x0421",
+    "ISO 639x Value": ""
+  },
+  {
+    "Language Culture Name": "it-IT",
+    "Display Name": "Italian - Italy",
+    "Culture Code": "0x0410",
+    "ISO 639x Value": ""
+  },
+  {
+    "Language Culture Name": "it-CH",
+    "Display Name": "Italian - Switzerland",
+    "Culture Code": "0x0810",
+    "ISO 639x Value": "ITS"
+  },
+  {
+    "Language Culture Name": "ja-JP",
+    "Display Name": "Japanese - Japan",
+    "Culture Code": "0x0411",
+    "ISO 639x Value": "JPN"
+  },
+  {
+    "Language Culture Name": "kn-IN",
+    "Display Name": "Kannada - India",
+    "Culture Code": "0x044B",
+    "ISO 639x Value": ""
+  },
+  {
+    "Language Culture Name": "kk-KZ",
+    "Display Name": "Kazakh - Kazakhstan",
+    "Culture Code": "0x043F",
+    "ISO 639x Value": ""
+  },
+  {
+    "Language Culture Name": "kok-IN",
+    "Display Name": "Konkani - India",
+    "Culture Code": "0x0457",
+    "ISO 639x Value": ""
+  },
+  {
+    "Language Culture Name": "ko-KR",
+    "Display Name": "Korean - Korea",
+    "Culture Code": "0x0412",
+    "ISO 639x Value": "KOR"
+  },
+  {
+    "Language Culture Name": "ky-KZ",
+    "Display Name": "Kyrgyz - Kazakhstan",
+    "Culture Code": "0x0440",
+    "ISO 639x Value": ""
+  },
+  {
+    "Language Culture Name": "lv-LV",
+    "Display Name": "Latvian - Latvia",
+    "Culture Code": "0x0426",
+    "ISO 639x Value": "LVI"
+  },
+  {
+    "Language Culture Name": "lt-LT",
+    "Display Name": "Lithuanian - Lithuania",
+    "Culture Code": "0x0427",
+    "ISO 639x Value": "LTH"
+  },
+  {
+    "Language Culture Name": "mk-MK",
+    "Display Name": "Macedonian (FYROM)",
+    "Culture Code": "0x042F",
+    "ISO 639x Value": "MKD"
+  },
+  {
+    "Language Culture Name": "ms-BN",
+    "Display Name": "Malay - Brunei",
+    "Culture Code": "0x083E",
+    "ISO 639x Value": ""
+  },
+  {
+    "Language Culture Name": "ms-MY",
+    "Display Name": "Malay - Malaysia",
+    "Culture Code": "0x043E",
+    "ISO 639x Value": ""
+  },
+  {
+    "Language Culture Name": "mr-IN",
+    "Display Name": "Marathi - India",
+    "Culture Code": "0x044E",
+    "ISO 639x Value": ""
+  },
+  {
+    "Language Culture Name": "mn-MN",
+    "Display Name": "Mongolian - Mongolia",
+    "Culture Code": "0x0450",
+    "ISO 639x Value": ""
+  },
+  {
+    "Language Culture Name": "nb-NO",
+    "Display Name": "Norwegian (Bokmål) - Norway",
+    "Culture Code": "0x0414",
+    "ISO 639x Value": ""
+  },
+  {
+    "Language Culture Name": "nn-NO",
+    "Display Name": "Norwegian (Nynorsk) - Norway",
+    "Culture Code": "0x0814",
+    "ISO 639x Value": ""
+  },
+  {
+    "Language Culture Name": "pl-PL",
+    "Display Name": "Polish - Poland",
+    "Culture Code": "0x0415",
+    "ISO 639x Value": "PLK"
+  },
+  {
+    "Language Culture Name": "pt-BR",
+    "Display Name": "Portuguese - Brazil",
+    "Culture Code": "0x0416",
+    "ISO 639x Value": "PTB"
+  },
+  {
+    "Language Culture Name": "pt-PT",
+    "Display Name": "Portuguese - Portugal",
+    "Culture Code": "0x0816",
+    "ISO 639x Value": ""
+  },
+  {
+    "Language Culture Name": "pa-IN",
+    "Display Name": "Punjabi - India",
+    "Culture Code": "0x0446",
+    "ISO 639x Value": ""
+  },
+  {
+    "Language Culture Name": "ro-RO",
+    "Display Name": "Romanian - Romania",
+    "Culture Code": "0x0418",
+    "ISO 639x Value": "ROM"
+  },
+  {
+    "Language Culture Name": "ru-RU",
+    "Display Name": "Russian - Russia",
+    "Culture Code": "0x0419",
+    "ISO 639x Value": "RUS"
+  },
+  {
+    "Language Culture Name": "sa-IN",
+    "Display Name": "Sanskrit - India",
+    "Culture Code": "0x044F",
+    "ISO 639x Value": ""
+  },
+  {
+    "Language Culture Name": "Cy-sr-SP",
+    "Display Name": "Serbian (Cyrillic) - Serbia",
+    "Culture Code": "0x0C1A",
+    "ISO 639x Value": ""
+  },
+  {
+    "Language Culture Name": "Lt-sr-SP",
+    "Display Name": "Serbian (Latin) - Serbia",
+    "Culture Code": "0x081A",
+    "ISO 639x Value": ""
+  },
+  {
+    "Language Culture Name": "sk-SK",
+    "Display Name": "Slovak - Slovakia",
+    "Culture Code": "0x041B",
+    "ISO 639x Value": "SKY"
+  },
+  {
+    "Language Culture Name": "sl-SI",
+    "Display Name": "Slovenian - Slovenia",
+    "Culture Code": "0x0424",
+    "ISO 639x Value": "SLV"
+  },
+  {
+    "Language Culture Name": "es-AR",
+    "Display Name": "Spanish - Argentina",
+    "Culture Code": "0x2C0A",
+    "ISO 639x Value": "ESS"
+  },
+  {
+    "Language Culture Name": "es-BO",
+    "Display Name": "Spanish - Bolivia",
+    "Culture Code": "0x400A",
+    "ISO 639x Value": "ESB"
+  },
+  {
+    "Language Culture Name": "es-CL",
+    "Display Name": "Spanish - Chile",
+    "Culture Code": "0x340A",
+    "ISO 639x Value": "ESL"
+  },
+  {
+    "Language Culture Name": "es-CO",
+    "Display Name": "Spanish - Colombia",
+    "Culture Code": "0x240A",
+    "ISO 639x Value": "ESO"
+  },
+  {
+    "Language Culture Name": "es-CR",
+    "Display Name": "Spanish - Costa Rica",
+    "Culture Code": "0x140A",
+    "ISO 639x Value": "ESC"
+  },
+  {
+    "Language Culture Name": "es-DO",
+    "Display Name": "Spanish - Dominican Republic",
+    "Culture Code": "0x1C0A",
+    "ISO 639x Value": "ESD"
+  },
+  {
+    "Language Culture Name": "es-EC",
+    "Display Name": "Spanish - Ecuador",
+    "Culture Code": "0x300A",
+    "ISO 639x Value": "ESF"
+  },
+  {
+    "Language Culture Name": "es-SV",
+    "Display Name": "Spanish - El Salvador",
+    "Culture Code": "0x440A",
+    "ISO 639x Value": "ESE"
+  },
+  {
+    "Language Culture Name": "es-GT",
+    "Display Name": "Spanish - Guatemala",
+    "Culture Code": "0x100A",
+    "ISO 639x Value": "ESG"
+  },
+  {
+    "Language Culture Name": "es-HN",
+    "Display Name": "Spanish - Honduras",
+    "Culture Code": "0x480A",
+    "ISO 639x Value": "ESH"
+  },
+  {
+    "Language Culture Name": "es-MX",
+    "Display Name": "Spanish - Mexico",
+    "Culture Code": "0x080A",
+    "ISO 639x Value": "ESM"
+  },
+  {
+    "Language Culture Name": "es-NI",
+    "Display Name": "Spanish - Nicaragua",
+    "Culture Code": "0x4C0A",
+    "ISO 639x Value": "ESI"
+  },
+  {
+    "Language Culture Name": "es-PA",
+    "Display Name": "Spanish - Panama",
+    "Culture Code": "0x180A",
+    "ISO 639x Value": "ESA"
+  },
+  {
+    "Language Culture Name": "es-PY",
+    "Display Name": "Spanish - Paraguay",
+    "Culture Code": "0x3C0A",
+    "ISO 639x Value": "ESZ"
+  },
+  {
+    "Language Culture Name": "es-PE",
+    "Display Name": "Spanish - Peru",
+    "Culture Code": "0x280A",
+    "ISO 639x Value": "ESR"
+  },
+  {
+    "Language Culture Name": "es-PR",
+    "Display Name": "Spanish - Puerto Rico",
+    "Culture Code": "0x500A",
+    "ISO 639x Value": "ES"
+  },
+  {
+    "Language Culture Name": "es-ES",
+    "Display Name": "Spanish - Spain",
+    "Culture Code": "0x0C0A",
+    "ISO 639x Value": ""
+  },
+  {
+    "Language Culture Name": "es-UY",
+    "Display Name": "Spanish - Uruguay",
+    "Culture Code": "0x380A",
+    "ISO 639x Value": "ESY"
+  },
+  {
+    "Language Culture Name": "es-VE",
+    "Display Name": "Spanish - Venezuela",
+    "Culture Code": "0x200A",
+    "ISO 639x Value": "ESV"
+  },
+  {
+    "Language Culture Name": "sw-KE",
+    "Display Name": "Swahili - Kenya",
+    "Culture Code": "0x0441",
+    "ISO 639x Value": ""
+  },
+  {
+    "Language Culture Name": "sv-FI",
+    "Display Name": "Swedish - Finland",
+    "Culture Code": "0x081D",
+    "ISO 639x Value": "SVF"
+  },
+  {
+    "Language Culture Name": "sv-SE",
+    "Display Name": "Swedish - Sweden",
+    "Culture Code": "0x041D",
+    "ISO 639x Value": ""
+  },
+  {
+    "Language Culture Name": "syr-SY",
+    "Display Name": "Syriac - Syria",
+    "Culture Code": "0x045A",
+    "ISO 639x Value": ""
+  },
+  {
+    "Language Culture Name": "ta-IN",
+    "Display Name": "Tamil - India",
+    "Culture Code": "0x0449",
+    "ISO 639x Value": ""
+  },
+  {
+    "Language Culture Name": "tt-RU",
+    "Display Name": "Tatar - Russia",
+    "Culture Code": "0x0444",
+    "ISO 639x Value": ""
+  },
+  {
+    "Language Culture Name": "te-IN",
+    "Display Name": "Telugu - India",
+    "Culture Code": "0x044A",
+    "ISO 639x Value": ""
+  },
+  {
+    "Language Culture Name": "th-TH",
+    "Display Name": "Thai - Thailand",
+    "Culture Code": "0x041E",
+    "ISO 639x Value": "THA"
+  },
+  {
+    "Language Culture Name": "tr-TR",
+    "Display Name": "Turkish - Turkey",
+    "Culture Code": "0x041F",
+    "ISO 639x Value": "TRK"
+  },
+  {
+    "Language Culture Name": "uk-UA",
+    "Display Name": "Ukrainian - Ukraine",
+    "Culture Code": "0x0422",
+    "ISO 639x Value": "UKR"
+  },
+  {
+    "Language Culture Name": "ur-PK",
+    "Display Name": "Urdu - Pakistan",
+    "Culture Code": "0x0420",
+    "ISO 639x Value": "URD"
+  },
+  {
+    "Language Culture Name": "Cy-uz-UZ",
+    "Display Name": "Uzbek (Cyrillic) - Uzbekistan",
+    "Culture Code": "0x0843",
+    "ISO 639x Value": ""
+  },
+  {
+    "Language Culture Name": "Lt-uz-UZ",
+    "Display Name": "Uzbek (Latin) - Uzbekistan",
+    "Culture Code": "0x0443",
+    "ISO 639x Value": ""
+  },
+  {
+    "Language Culture Name": "vi-VN",
+    "Display Name": "Vietnamese - Vietnam",
+    "Culture Code": "0x042A",
+    "ISO 639x Value": "VIT"
+  }
+]
