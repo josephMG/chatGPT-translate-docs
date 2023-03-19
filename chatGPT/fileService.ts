@@ -31,9 +31,20 @@ const createNestedFolder = function(fileObj: FileObject) {
     }
 }
 
-const writeToFile = (fileObj: FileObject, text: string) => {
+const createStream = (fileObj: FileObject) => 
+  fs.createWriteStream(path.join(__dirname, fileObj.getDestinationFolder(), fileObj.getFileName()), {flags:'a'});
+
+const writeToFile = (stream: fs.WriteStream, text: string) => {
   try {
-    fs.writeFileSync(path.join(__dirname, fileObj.getDestinationFolder(), fileObj.getFileName()), text)
+    stream.write(text + "\n\n");
+  } catch (err) {
+    console.error(err);
+  }
+}
+
+const removeFile = (fileObj: FileObject) => {
+  try {
+    fs.unlinkSync(path.join(__dirname, fileObj.getDestinationFolder(), fileObj.getFileName()))
   } catch (err) {
     console.error(err);
   }
@@ -69,7 +80,9 @@ class FileObject {
 const funcs = {
   getAllFiles,
   createNestedFolder,
-  writeToFile
+  createStream,
+  writeToFile,
+  removeFile
 }
 
 export { funcs }

@@ -5,6 +5,7 @@
     "moduleResolution": "Node",
     "strict": true,
     "esModuleInterop": true,
+    "downlevelIteration": true,
     "forceConsistentCasingInFileNames": true
   },
     "ts-node": {

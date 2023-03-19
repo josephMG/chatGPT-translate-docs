@@ -1,22 +1,23 @@
-import { ChatGPTAPI } from 'chatgpt'
+import { ChatGPTAPI, ChatMessage } from 'chatgpt'
 
-const sendMessage = async (prompt: string) => {
-  const api = new ChatGPTAPI({
-    apiKey: process.env.OPENAI_API_KEY as string,
-    completionParams: {
-    },
-    debug: false,
-  })
-  const res = await api.sendMessage(prompt)
-  console.log(res)
-  return res.text
+
+class ChatGPT {
+  api: ChatGPTAPI
+  constructor() {
+    this.api = new ChatGPTAPI({
+      apiKey: process.env.OPENAI_API_KEY as string,
+      completionParams: {
+      },
+      debug: true,
+    })
+
+  }
+  async sendMessage(prompt: string, res?: ChatMessage) {
+    const result = !!res ? 
+      await this.api.sendMessage(prompt, { parentMessageId: res.id }) : 
+      await this.api.sendMessage(prompt)
+    return result
+  }
 }
 
-const funcs = {
-  sendMessage
-}
-
-export {
-  funcs
-}
-
+export default ChatGPT
