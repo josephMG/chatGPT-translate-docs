@@ -8,15 +8,17 @@ class ChatGPT {
       apiKey: process.env.OPENAI_API_KEY as string,
       completionParams: {
       },
-      debug: true,
+      debug: false,
     })
 
   }
   async sendMessage(prompt: string, res?: ChatMessage) {
-    const result = !!res ? 
-      await this.api.sendMessage(prompt, { parentMessageId: res.id }) : 
-      await this.api.sendMessage(prompt)
-    return result
+    if (!!res) {
+      console.log('has res...')
+      return await this.api.sendMessage(prompt, { parentMessageId: res.id })
+    }
+    console.log('no res...')
+    return await this.api.sendMessage(prompt)
   }
 }
 

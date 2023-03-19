@@ -31,12 +31,9 @@ const createNestedFolder = function(fileObj: FileObject) {
     }
 }
 
-const createStream = (fileObj: FileObject) => 
-  fs.createWriteStream(path.join(__dirname, fileObj.getDestinationFolder(), fileObj.getFileName()), {flags:'a'});
-
-const writeToFile = (stream: fs.WriteStream, text: string) => {
+const writeToFile = (fileObj: FileObject, text: string) => {
   try {
-    stream.write(text + "\n\n");
+    fs.appendFileSync(path.join(__dirname, fileObj.getDestinationFolder(), fileObj.getFileName()), text + "\n\n");
   } catch (err) {
     console.error(err);
   }
@@ -80,7 +77,6 @@ class FileObject {
 const funcs = {
   getAllFiles,
   createNestedFolder,
-  createStream,
   writeToFile,
   removeFile
 }

@@ -7,28 +7,18 @@ import { Subject, toArray } from 'rxjs';
 import fs from 'fs'
 import FileObj, { funcs as fileService} from './fileService'
 import ChatGPT from './chatGPTService'
+import chalk from 'chalk';
 
 dotenv.config()
 
 const convertContentToParagraph = (content: string) => {
   const codeMatches = [...content.matchAll(/^```.+\n([\s\S]*?)```/gm)]
-  const paragraphMatches = content.matchAll(/\n\n/g)
   let startPos = 0
-  let codeIndex = 0
   const paragraph: string[] = []
-  for(const paragraphMatch of paragraphMatches) {
-    if (codeMatches.length > 0 && codeIndex < codeMatches.length) {
-      const codeMatch = codeMatches[codeIndex]
-      if (paragraphMatch.index && codeMatch.index) {
-        if (codeMatch.index! < paragraphMatch.index!) {
-          if (codeMatch.index + codeMatch[0].length > paragraphMatch.index) {
-            continue
-          }
-          codeIndex += 1
-        }
-      }
-    }
-    const endPos = paragraphMatch.index! + paragraphMatch[0].length
+  for(const codeMatch of codeMatches) {
+    const endPos = codeMatch.index! + codeMatch[0].length
+    const paragraphMatches = [...(content.substring(startPos, endPos).matchAll(/\n\n/g))]
+    if (paragraphMatches.length < 20) continue
     paragraph.push(content.substring(startPos, endPos))
     startPos = endPos
   }
@@ -44,18 +34,16 @@ const translateFiles = async (arrayOfFiles: string[], sourceFolder: string, loca
     fileService.removeFile(fileObj)
     const content = fileObj.getContent()
     const paragraphs = convertContentToParagraph(content)
-    const stream = fileService.createStream(fileObj)
 
-    const spinner = ora(`Translating ${filePath}`).start();
-    console.log('rrrrr')
-    let res = await chatAPI.sendMessage(`I will give you a serial of paragraphs in markdown format, please translate it to ${localeName}, and output unrendered markdown if you received, thanks`)
-    console.log(res)
+    const spinner = ora(chalk.cyan(`Translating ${filePath}`)).start();
+    let res = await chatAPI.sendMessage(`I will give you a series of paragraphs in markdown format, please translate to ${localeName} one by one, and output unrendered markdown if you received, thanks`)
     for (const paragraph of paragraphs) {
+      spinner.text = chalk.blue('SendMessage...')
       res = await chatAPI.sendMessage(paragraph, res)
-      console.log(res.text)
-      fileService.writeToFile(stream, res.text)
+      spinner.text = chalk.green('Write to file...')
+      fileService.writeToFile(fileObj, res.text)
+      spinner.text = chalk.cyan(`Translating ${filePath}`)
     }
-    stream.end()
     spinner.succeed()
     /*
     const text = await oraPromise(gptService.sendMessage(prompt), {
