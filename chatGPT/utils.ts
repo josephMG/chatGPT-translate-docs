@@ -8,6 +8,7 @@ import chalk from 'chalk';
 export const translateChunks = async (fileObj: FileObj, chunks: TextWithTokens[], localeName: string, cb: (i: number) => void) => {
   const chatAPI = new ChatGPT()
   const greeting = await chatAPI.sendMessage(`please translate my next markdown content to ${localeName}, and only give me unrendered markdown output.`)
+
   for (const i in chunks) {
     cb(Number(i))
     const chunk = chunks[i]

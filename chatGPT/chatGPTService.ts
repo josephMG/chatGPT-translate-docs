@@ -2,6 +2,7 @@ import { ChatGPTClient, ResponseData } from '@waylaidwanderer/chatgpt-api';
 import { encoding_for_model } from "@dqbd/tiktoken";
 
 const CHUNK_TOKENS: number = Number(process.env.CHUNK_TOKENS) || 1300
+const CONTEXT_TOKEN = 117
 export type TextWithTokens = {tokens: number, text: string}
 
 const convertContentToParagraph = (content: string, cb: VoidFunction) => {
@@ -49,7 +50,7 @@ const convertParagraphToChunk = (paragraphs: TextWithTokens[]): TextWithTokens[]
     if (index === paragraphs.length - 1) {
       return [...chunks]
     }
-    if (s.tokens + paragraphs[index + 1].tokens > CHUNK_TOKENS) {
+    if (s.tokens + paragraphs[index + 1].tokens > CHUNK_TOKENS - CONTEXT_TOKEN) {
       return [...chunks, { tokens: 0, text: '' }]
     }
     chunks[chunks.length - 1] = s
@@ -82,13 +83,13 @@ const clientOptions = {
         // for normal usage.
         temperature: 0,
         // Set max_tokens here to override the default max_tokens of 1000 for the completion.
-        max_tokens: 4097 - CHUNK_TOKENS - 117,
+        max_tokens: 4097 - CHUNK_TOKENS - CONTEXT_TOKEN,
     },
     // (Optional) Davinci models have a max context length of 4097 tokens, but you may need to change this for other models.
     maxContextTokens: 4097,
     // (Optional) You might want to lower this to save money if using a paid model like `text-davinci-003`.
     // Earlier messages will be dropped until the prompt is within the limit.
-    maxPromptTokens: CHUNK_TOKENS + 117,
+    maxPromptTokens: CHUNK_TOKENS + CONTEXT_TOKEN,
     // (Optional) Set custom instructions instead of "You are ChatGPT...".
     // promptPrefix: 'You are Bob, a cowboy in Western times...',
     // (Optional) Set a custom name for the user
