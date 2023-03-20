@@ -11,6 +11,7 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
+    "@dqbd/tiktoken": "^1.0.2",
     "@waylaidwanderer/chatgpt-api": "^1.31.5",
     "chalk": "^4.1.2",
     "dotenv": "^16.0.3",

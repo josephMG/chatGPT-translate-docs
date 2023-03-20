@@ -46,3 +46,5 @@ next-env.d.ts
 .yarnrc.yml
 
 .vscode/
+
+failed-files.json

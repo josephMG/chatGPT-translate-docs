@@ -33,7 +33,7 @@ const createNestedFolder = function(fileObj: FileObject) {
 
 const writeToFile = (fileObj: FileObject, text: string) => {
   try {
-    fs.appendFileSync(fileObj.getDestinationFullPath(), text + "\n\n", 'utf8');
+    fs.appendFileSync(fileObj.getDestinationFullPath(), text, 'utf8');
   } catch (err) {
     console.error(err);
   }
@@ -61,6 +61,13 @@ const removeFile = (fileObj: FileObject) => {
   } catch (err) {
     console.error(err);
   }
+}
+
+const writeFailedFiles = (files: string[], fileName: string) => {
+  const filePath = path.join(__dirname, fileName)
+  fs.writeFile(filePath, JSON.stringify(files), 'utf8', function (err) {
+    if (err) return console.log(err);
+  });
 }
 
 class FileObject {
@@ -98,7 +105,8 @@ const funcs = {
   createNestedFolder,
   writeToFile,
   replaceNullChar,
-  removeFile
+  removeFile,
+  writeFailedFiles
 }
 
 export { funcs }
