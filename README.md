@@ -6,4 +6,9 @@
 5. Run `ts-node index.ts` to translate a file in reactjs.org/beta/src/content to the language you selected.
 
 https://github.com/josephMG/chatGPT-translate-docs/blob/main/chatGPT/index.ts#L75-L79
+
 If you want to translate all files in content, remove comment on line 77.
+
+#### env
+- OPENAI_API_KEY: your openai api key
+- CHUNK_TOKENS: chunk your prompt less than this token number
