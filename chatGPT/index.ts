@@ -76,8 +76,7 @@ inquirer
     
     // await translateFiles(allFiles, fileInfo.answer, localeInfo.answer)
 
-    // await translateFiles([allFiles[0]], fileInfo.answer, localeInfo.answer)
-    await translateFiles(['/docs/demo.md'], fileInfo.answer, localeInfo.answer)
+    await translateFiles([allFiles[0]], fileInfo.answer, localeInfo.answer)
   });
 
 prompts.next({
