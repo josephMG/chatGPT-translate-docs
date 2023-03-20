@@ -31,30 +31,30 @@ const translateFiles = async (arrayOfFiles: string[], sourceFolder: string, loca
     const fileObj = new FileObj(filePath, sourceFolder, localeName)
     const chatAPI = new ChatGPT()
     fileService.createNestedFolder(fileObj)
-    fileService.removeFile(fileObj)
     const content = fileObj.getContent()
     const paragraphs = convertContentToParagraph(content)
 
-    const spinner = ora(chalk.cyan(`Translating ${filePath}`)).start();
-    let res = await chatAPI.sendMessage(`I will give you a series of paragraphs in markdown format, please translate to ${localeName} one by one, and output unrendered markdown if you received, thanks`)
-    for (const paragraph of paragraphs) {
-      spinner.text = chalk.blue('SendMessage...')
-      res = await chatAPI.sendMessage(paragraph, res)
-      spinner.text = chalk.green('Write to file...')
-      fileService.writeToFile(fileObj, res.text)
-      spinner.text = chalk.cyan(`Translating ${filePath}`)
-    }
+    let spinner = ora(chalk.cyan('Sending greeting message')).start();
+    const greetMsg = await chatAPI.sendMessage(`please translate my next markdown content to ${localeName}, and give me unrendered markdown  output.`)
     spinner.succeed()
+
+    spinner = ora(chalk.cyan(`Translating ${filePath}`)).start();
+    for (const paragraph of paragraphs) {
+      spinner.text = chalk.cyan(`Translating ${filePath}`)
+      const res = await chatAPI.sendMessage("```markdown\n" +
+`${paragraph}\n` +
+"```", greetMsg)
+      spinner.text = chalk.green('Write to file...')
+      fileService.writeToFile(fileObj, res.response.replace(/\0/g, ''))
+    }
+    fileService.replaceNullChar(fileObj)
+    spinner.succeed()
+
     /*
-    const text = await oraPromise(gptService.sendMessage(prompt), {
-      text: `Translating ${filePath}`,
-      successText: `Finish translating ${filePath}`
-    })
     const text = await oraPromise(gptService.sendMessage('Write a poem about cats.'), {
       text: `Translating ${filePath}`,
       successText: `Finish translating ${filePath}`
     })
-    fileService.writeToFile(fileObj, text)
      */
   }
 }

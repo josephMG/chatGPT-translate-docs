@@ -33,15 +33,31 @@ const createNestedFolder = function(fileObj: FileObject) {
 
 const writeToFile = (fileObj: FileObject, text: string) => {
   try {
-    fs.appendFileSync(path.join(__dirname, fileObj.getDestinationFolder(), fileObj.getFileName()), text + "\n\n");
+    fs.appendFileSync(fileObj.getDestinationFullPath(), text + "\n\n", 'utf8');
   } catch (err) {
     console.error(err);
   }
 }
 
+const replaceNullChar = (fileObj: FileObject) => {
+  fs.readFile(fileObj.getDestinationFullPath(), 'utf8', function (err,data) {
+    if (err) {
+      return console.log(err);
+    }
+    var result = data.replace(/\0/g, '')
+
+    fs.writeFile(fileObj.getDestinationFullPath(), result, 'utf8', function (err) {
+      if (err) return console.log(err);
+    });
+  });
+}
+
 const removeFile = (fileObj: FileObject) => {
   try {
-    fs.unlinkSync(path.join(__dirname, fileObj.getDestinationFolder(), fileObj.getFileName()))
+    const filePath = path.join(__dirname, fileObj.getDestinationFolder(), fileObj.getFileName())
+    if (fs.existsSync(filePath)) {
+      fs.unlinkSync(filePath)
+    }
   } catch (err) {
     console.error(err);
   }
@@ -70,6 +86,9 @@ class FileObject {
     getContent() {
       return fs.readFileSync(this.filePath, {encoding: 'utf8'})
     }
+    getDestinationFullPath() {
+      return path.join(__dirname, this.getDestinationFolder(), this.getFileName())
+    }
     // ERROR: An implementation cannot be declared in ambient contexts.
 }
 
@@ -78,6 +97,7 @@ const funcs = {
   getAllFiles,
   createNestedFolder,
   writeToFile,
+  replaceNullChar,
   removeFile
 }
 

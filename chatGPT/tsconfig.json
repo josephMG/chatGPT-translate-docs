@@ -6,11 +6,15 @@
     "strict": true,
     "esModuleInterop": true,
     "downlevelIteration": true,
-    "forceConsistentCasingInFileNames": true
+    "forceConsistentCasingInFileNames": true,
+    "typeRoots": ["./types"]
   },
-    "ts-node": {
-        "esm": true,
-
-    "experimentalSpecifierResolution": "node"
-    }
+  "ts-node": {
+    "esm": true,
+    "experimentalSpecifierResolution": "node",
+    "files": true
+  },
+  "files": [
+    "index.d.ts"
+  ]
 }
