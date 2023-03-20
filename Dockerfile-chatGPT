@@ -6,6 +6,6 @@ RUN npm install -g typescript ts-node
 # RUN mkdir -p /app/node_modules
 WORKDIR /app
 COPY ./chatGPT /app
-COPY ./reactjs.org/beta/src/content /docs
+COPY ./reactjs.org/src/content /docs
 
 RUN npm install

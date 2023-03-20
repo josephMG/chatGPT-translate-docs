@@ -6,6 +6,6 @@ RUN apk add --no-cache git
 # Install app dependencies
 #RUN mkdir -p /app/node_modules
 WORKDIR /app
-COPY ./reactjs.org/beta /app
+COPY ./reactjs.org /app
 
 RUN yarn install

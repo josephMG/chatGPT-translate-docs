@@ -6,8 +6,8 @@ services:
       context: .
       dockerfile: Dockerfile-react
     volumes:
-      - ./reactjs.org/beta:/app
-      - ./reactjs.org/beta/node_modules:/app/node_modules
+      - ./reactjs.org:/app
+      - ./reactjs.org/node_modules:/app/node_modules
     command: sh -c 'yarn dev'
     ports:
       - "3000:3000"
@@ -20,5 +20,5 @@ services:
     volumes:
       - ./chatGPT:/app
       - ./chatGPT/node_modules:/app/node_modules
-      - ./reactjs.org/beta/src/content:/docs
+      - ./reactjs.org/src/content:/docs
     stdin_open: true
